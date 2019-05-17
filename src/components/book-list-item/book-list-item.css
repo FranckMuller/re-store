@@ -1,0 +1,28 @@
+.book-list-item {
+
+}
+
+.book-list-item .cover-book {
+  margin-right: 15px;
+}
+
+.book-list-item .title {
+  font-size: 18px;
+  color: #1865d8;
+  margin-bottom: 10px;
+}
+
+.book-list-item .author {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.book-list-item .price {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.book-list-item .btn {
+  width: 140px;
+}

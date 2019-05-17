@@ -1,0 +1,3 @@
+.book-list li + li {
+  margin-top: 20px;
+}
