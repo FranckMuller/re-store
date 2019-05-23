@@ -26,7 +26,7 @@ class BookListContainer extends Component {
         books={books}
         onAddedToCart={onAddedToCart}
         onDeletedFromCart={onDeletedFromCart}
-        />
+      />
     )
   };
 };

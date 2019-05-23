@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bookRemovedFromCart, allBooksRemovedFromCart, bookAddedToCart } from '../../actions';
 
 import './shopping-cart-table.css';
 
-const ShoppingCartTable = ({ items, total, onDecrease, onIncrease, onDedelete }) => {
+const ShoppingCartTable = ({ items, total, onDecrease, onIncrease, onCleared }) => {
 
   const renderRow = (item, idx) => {
     const { id, title, count, total } = item;
@@ -15,17 +16,17 @@ const ShoppingCartTable = ({ items, total, onDecrease, onIncrease, onDedelete })
         <td>{total}</td>
         <td>
           <button
-            onClick={onDedelete}
+            onClick={() => onCleared(id)}
             className="btn btn-outline-danger btn-sm float-right">
             <i className="fa fa-trash-o" />
           </button>
           <button
-            onClick={onIncrease}
+             onClick={() => onIncrease(id)}
             className="btn btn-outline-success btn-sm float-right">
             <i className="fa fa-plus-circle" />
           </button>
           <button
-            onClick={onDecrease}
+            onClick={() => onDecrease(id)}
             className="btn btn-outline-warning btn-sm float-right">
             <i className="fa fa-minus-circle" />
           </button>
@@ -41,7 +42,7 @@ const ShoppingCartTable = ({ items, total, onDecrease, onIncrease, onDedelete })
         <thead>
           <tr>
             <th>#</th>
-            <th>Item</th>
+            <th>Title</th>
             <th>Count</th>
             <th>Price</th>
             <th className="text-right">Action</th>
@@ -66,18 +67,10 @@ const mapStateToProps = ({ cartItems, orderTotal }) => {
   };
 };
 
-const mapDispatchToProps = () => {
-  return {
-    onDecrease: () => {
-      console.log('decrease')
-    },
-    onIncrease: () => {
-      console.log('increase')
-    },
-    onDedelete: () => {
-      console.log('delete')
-    }
-  }
+const mapDispatchToProps = {
+    onDecrease: bookRemovedFromCart,
+    onIncrease: bookAddedToCart,
+    onCleared: allBooksRemovedFromCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCartTable);

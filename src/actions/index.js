@@ -36,9 +36,16 @@ const bookAddedToCart = (id) => {
   };
 };
 
-const bookDeletedFromCart = (id) => {
+const bookRemovedFromCart = (id) => {
   return {
-    type: 'ON_DELETED_FROM_CART',
+    type: 'BOOK_REMOVED_FROM_CART',
+    payload: id
+  };
+};
+
+const allBooksRemovedFromCart = (id) => {
+  return {
+    type: 'ALL_BOOKS_REMOVED_FROM_CART',
     payload: id
   };
 };
@@ -49,5 +56,6 @@ export {
   booksError,
   fetchBooks,
   bookAddedToCart,
-  bookDeletedFromCart
+  bookRemovedFromCart,
+  allBooksRemovedFromCart
 };

@@ -1,3 +1,11 @@
-.book-list li + li {
-  margin-top: 20px;
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px 0 -10px;
+}
+
+.book-list li {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 0 10px;
 }
