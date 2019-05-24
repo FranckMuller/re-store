@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './bookshop-header.css';
 
-const BookshopHeader = ({ count, totalPrice }) => {
+const BookshopHeader = ({ orderTotal, orderItemsCount }) => {
   return (
     <header className="bookshop-header header">
       <div className="container d-flex justify-content-between align-items-center">
@@ -13,8 +13,8 @@ const BookshopHeader = ({ count, totalPrice }) => {
         <div className="info d-flex align-items-center">
           <Link to="/cart">
             <span className="icon-cart"><i className="fa fa-shopping-cart"></i></span>
-            <span className="count">{count} items</span>
-            <span className="total-price">(${totalPrice})</span>
+            <span className="count">{orderItemsCount} books</span>
+            <span className="total-price">(${orderTotal})</span>
           </Link>
         </div>
       </div>
